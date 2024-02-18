@@ -4,11 +4,8 @@ import React from 'react'
 const LoadingSkeleton = () => {
   return (
     <div>
-        <p>
-
-        anani sikim sananiaskfkafawkqrwjqdmkıwnqejkqwndıoqwjenıoejnwoqemdoqjwopdjmoqpwej
-        </p>
-        <Skeleton className="h-96" />
+      Loading...
+        <Skeleton className="h-24 w-96" />
     </div>
   )
 }

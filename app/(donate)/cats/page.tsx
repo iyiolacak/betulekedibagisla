@@ -1,8 +1,19 @@
+"use client";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+
 import React from 'react'
 
 const Cats = () => {
+    const tasks = useQuery(api.tasks.get);
+
   return (
-    <div></div>
+    <div>
+              {tasks?.map(({ _id, text }) => (
+        <div key={_id}>{text}</div>
+      ))}
+
+    </div>
   )
 }
 
