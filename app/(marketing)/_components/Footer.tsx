@@ -25,7 +25,7 @@ const Footer = () => {
         <div>
           <ul>
             <li className="*:text-sm md:text-md">
-              <Link href={"/privacy-policy"}>Privacy</Link>
+              <Link href={"/legal/privacy-policy"}>Privacy</Link>
             </li>
           </ul>
         </div>

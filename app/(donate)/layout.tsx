@@ -7,7 +7,9 @@ const Layout = (
   return (
     <>
     <DonateNavbar />
+    <div className='w-full'>
     {children}
+    </div>
     </>
   )
 }

@@ -14,11 +14,15 @@ import {
 import Image from "next/image";
 import { Separator } from "./ui/separator";
 import Link from "next/link";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 const MobileSidebar = () => {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
 
+  const router = useRouter();
+  const { isSignedIn, user, isLoaded } = useUser();
   const onOpen = useMobileSidebar((state) => state.onOpen);
   const onClose = useMobileSidebar((state) => state.onClose);
   const isOpen = useMobileSidebar((state) => state.isOpen);
@@ -52,18 +56,38 @@ const MobileSidebar = () => {
               Enjoy your kitties.
             </SheetDescription>
             <Separator />
-            <ul className="*:mt-2">
-              <li>
-                <Link href="/">
-                  <Button variant={"link"}>Sign In</Button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <Button variant={"blue"}>Donate Kitties</Button>
-                </Link>
-              </li>
-            </ul>
+            {!isLoaded && null}
+            {!isSignedIn && (
+              <ul className="*:mt-2">
+                <li>
+                  <Button
+                    variant={"link"}
+                    onClick={() => {
+                      router.push("/cats");
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </li>
+                <li>
+                  <Button
+                    variant={"blue"}
+                    onClick={() => {
+                      router.push("/cats");
+                    }}
+                  >
+                    Donate Kitties
+                  </Button>
+                </li>
+              </ul>
+            )}
+            {isSignedIn && (
+              <ul className="*:mt-2">
+                <li>
+                  <UserButton />
+                </li>
+              </ul>
+            )}
             <Separator />
             <ul>
               <li>

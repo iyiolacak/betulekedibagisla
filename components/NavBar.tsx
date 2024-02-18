@@ -7,9 +7,11 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { useMobileSidebar } from "@/hooks/use-mobile-sidebar";
 import MobileSidebar from "./mobile-navbar";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const NavBar = () => {
+  const { isSignedIn, user, isLoaded } = useUser();
+
   return (
     <div className="sticky top-0 flex flex-row p-4 border-b-2 justify-between md:px-20 items-center">
       <ul className="w-full flex flex-row justify-between items-center">
@@ -27,15 +29,20 @@ const NavBar = () => {
             />
           </Link>
         </li>
-        <ul className="hidden md:block">
+        {!isLoaded && (null)}
+        {!isSignedIn && (
+          <ul className="hidden md:block">
           <li>
             <Link href={"/cats"}>
             <Button variant={"link"}>Sign In</Button>
             </Link>
             <Button variant={"blue"}>Donate Kitties</Button>
-            <UserButton />
           </li>
         </ul>
+          )}
+          {isSignedIn && (
+            <UserButton />
+          )}
       </ul>
       <div className="ml-4 md:ml-0 block md:hidden">
         <MobileSidebar />

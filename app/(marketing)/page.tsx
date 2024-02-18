@@ -8,10 +8,13 @@ import CTA from "./_components/CTA";
 import Loading from "./loading";
 import { Suspense } from "react";
 import { useRouter } from "next/navigation";
+import { useClerk, useUser } from "@clerk/nextjs";
+import { getAuth } from "@clerk/nextjs/server";
 
 
 export default function Home() {
   const router = useRouter();
+  const user = useUser();
   return (
     <main className="flex min-h-screen flex-col items-center px-12 pt-6">
       {/* Landing Page */}
@@ -23,7 +26,7 @@ export default function Home() {
             alt="Cat"
             width={200}
             height={200}
-          />
+            />
           </Suspense>
           <div className="flex flex-col">
             <h1 className="text-4xl md:text-6xl font-semibold text-center text-slate-900">
@@ -81,3 +84,5 @@ export default function Home() {
     </main>
   );
 }
+  
+  
