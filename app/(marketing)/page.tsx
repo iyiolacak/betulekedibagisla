@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -5,8 +7,11 @@ import CatCarousel from "./_components/CatCarousel";
 import CTA from "./_components/CTA";
 import Loading from "./loading";
 import { Suspense } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function Home() {
+  const router = useRouter();
   return (
     <main className="flex min-h-screen flex-col items-center px-12 pt-6">
       {/* Landing Page */}
@@ -30,7 +35,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Button className="mt-4 w-full h-14 md:w-60 md:h-14 rounded-full text-md md:text-sm" variant={"blue"}>
+          <Button 
+          className="mt-4 w-full h-14 md:w-60 md:h-14 rounded-full text-md md:text-sm"
+          variant={"blue"}
+          onClick={() => {
+            router.push("/cats");
+          }}>
             Start Donating Kitties
             </Button>
         </div>
@@ -53,7 +63,13 @@ export default function Home() {
         <p className="text-center text-md md:text-start sm:text-lg mt-2 lg:mt-4 text-muted-foreground">
           Start donating kitties today. Make your loved ones come earlier :) <br />You can share all of these kitties today or just bring yours.
         </p>
-        <Button className="mt-4 w-full h-14 md:w-60 md:h-14 rounded-full text-md md:text-sm " variant={"blue"}>
+        <Button 
+        className="mt-4 w-full h-14 md:w-60 md:h-14 rounded-full text-md md:text-sm" 
+        variant={"blue"}
+        onClick={() => {
+          router.push("/cats");
+        }}
+        >
             Donate Kitties
             </Button>
         </div>

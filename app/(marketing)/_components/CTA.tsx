@@ -1,7 +1,11 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const CTA = () => {
+  const router = useRouter();
+
   return (
     <div className="flex justify-center">
       <div className="p-6 md:w-2/3 rounded-xl bg-blue-100">
@@ -12,6 +16,9 @@ const CTA = () => {
           <Button
             className="w-full h-14 md:w-40 md:h-10 rounded-full text-md md:text-sm text-white"
             variant={"blue"}
+            onClick={() => {
+              router.push("/cats");
+            }}
           >
             Donate Cats
           </Button>
