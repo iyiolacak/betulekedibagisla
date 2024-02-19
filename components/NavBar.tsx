@@ -33,10 +33,12 @@ const NavBar = () => {
         {!isSignedIn && (
           <ul className="hidden md:block">
           <li>
-            <Link href={"/cats"}>
+            <Link href={"/sign-in"}>
             <Button variant={"link"}>Sign In</Button>
             </Link>
+            <Link href={"/sign-up"}>
             <Button variant={"blue"}>Donate Kitties</Button>
+            </Link>
           </li>
         </ul>
           )}
