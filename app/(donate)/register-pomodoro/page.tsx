@@ -1,4 +1,6 @@
+import { Button } from '@/components/ui/button';
 import { currentUser } from '@clerk/nextjs'
+import Link from 'next/link';
 import React from 'react'
 
 const RegisterPomodoro = async () => {
@@ -12,6 +14,7 @@ const RegisterPomodoro = async () => {
             <p className='text-muted-foreground mt-2'>
                 How many Pomodoro sessions you have done before? This will set your initial Kitty Cent balance.
             </p>
+            <Link href={"/cats"}>tikla</Link>
         </div>
         </>
   )
