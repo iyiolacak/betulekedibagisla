@@ -21,6 +21,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { IoLogoOctocat } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 const DonateMobileSidebar = () => {
@@ -103,7 +104,22 @@ const DonateMobileSidebar = () => {
                 </Button>
               </Link>
             </li>
-
+            <Separator />
+            <h3 className="text-xs text-muted-foreground">People</h3>
+            <ul className="*:mt-1.5">
+            <li>
+                <Skeleton className="w-full h-12">
+                </Skeleton>
+            </li>
+            <li>
+                <Skeleton className="w-full h-12">
+                </Skeleton>
+            </li>
+            <li>
+                <Skeleton className="w-full h-12">
+                </Skeleton>
+            </li>
+            </ul>
           </ul>
         </SheetContent>
       </Sheet>

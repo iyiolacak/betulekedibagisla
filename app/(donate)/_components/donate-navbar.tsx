@@ -24,12 +24,12 @@ const DonateNavbar = () => {
       <div className="w-full p-4 md:px-12 items-center bg-slate-100">
         <div className="flex flex-row justify-between items-center">
           <div className="hidden md:block">
-            <ul className="flex flex-row gap-x-2  text-sm font-regular md:*:text-lg md:*:font-semibold *:text-slate-800">
+            <ul className="flex flex-row gap-x-9  text-sm font-regular md:*:text-md md:*:font-semibold *:text-slate-800">
               <li>
                 <Link href="/cats/donate">Donate Your Kitties</Link>
               </li>
               <li>
-                <Link href="/cats/buy">Buy Kitties</Link>
+                <Link href="/cats">Buy Kitties</Link>
               </li>
               <li>
                 <Link href="/cats/your-cats">Your Kitties</Link>
