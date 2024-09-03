@@ -1,0 +1,1 @@
+This project is about completing pomodoro sessions and for each completed one, you gain kittycoins. Kittycoins are made for being able to just donate cats to your loved ones. You can't pay to own a cat but just be donated.
